@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="449.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.SecondaryController">
+    <children>
+        <MenuBar fx:id="menubar" layoutY="2.0" prefHeight="26.0" prefWidth="449.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Inmuebles">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchToPiso" text="Pisos" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToCasa" text="Casas" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToLocal" text="Locales" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToNave" text="Naves" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToAlmacen" text="Almacenes" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Cuenta">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchToPersonalData" text="Datos Personales" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToEditData" text="Editar Datos" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchToAbout" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Label fx:id="tipo2" layoutX="182.0" layoutY="83.0" text="Inmuebles">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+      <ImageView fx:id="foto" fitHeight="201.0" fitWidth="265.0" layoutX="91.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="181.0" layoutY="484.0" mnemonicParsing="false" onAction="#getUserdata" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Cargar Datos">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="desc" layoutX="54.0" layoutY="325.0" text="Label" />
+      <Label fx:id="ubic" layoutX="54.0" layoutY="353.0" text="Label" />
+      <Label fx:id="prec" layoutX="54.0" layoutY="384.0" text="Label" />
+      <Label fx:id="fech" layoutX="54.0" layoutY="411.0" text="Label" />
+      <Label fx:id="tipo" layoutX="54.0" layoutY="440.0" text="Label" />
+      <Button layoutX="177.0" layoutY="562.0" mnemonicParsing="false" onAction="#switchToPrimary" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Volver al inicio">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="comprar" layoutX="192.0" layoutY="521.0" mnemonicParsing="false" onAction="#Comprar" style="-fx-background-color: trnasparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Comprar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+    </children>
+</Pane>

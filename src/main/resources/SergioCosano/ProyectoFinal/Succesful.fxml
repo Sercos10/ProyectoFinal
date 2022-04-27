@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="452.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.SuccesfulController">
+   <children>
+      <Label layoutX="148.0" layoutY="36.0" text="Felicidades">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
+      <Label layoutX="69.0" layoutY="135.0" text="La proxima vez que inicies sesión tendrás ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="102.0" text="Cambios realizados con exito">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="boton" layoutX="185.0" layoutY="210.0" mnemonicParsing="false" onAction="#SuccesfulClose" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Aceptar">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Label layoutX="98.0" layoutY="168.0" text="que logearte con los nuevos datos">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

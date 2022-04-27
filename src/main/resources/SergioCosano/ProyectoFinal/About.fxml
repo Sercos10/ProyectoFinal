@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="452.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.AboutController">
+   <children>
+      <Label layoutX="85.0" layoutY="39.0" text="myProperty Version 1.0.0.0">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Label>
+      <Label layoutX="66.0" layoutY="110.0" text="Aplicación realiza por Sergio Cosano Jiménez">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="180.0" layoutY="149.0" text="Curso CFGS1">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="boton" layoutX="198.0" layoutY="202.0" mnemonicParsing="false" onAction="#AboutClose" text="Aceptar" />
+   </children>
+</Pane>

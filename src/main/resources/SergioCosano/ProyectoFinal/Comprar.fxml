@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="187.0" prefWidth="454.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.ComprarController">
+   <children>
+      <Label layoutX="84.0" layoutY="44.0" text="!Felicidades has comprado el inmueble¡">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="8.0" layoutY="81.0" text="!Puedes disfrutar de tu nuevo inmueble desde hoy mismo¡">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="boton" layoutX="199.0" layoutY="124.0" mnemonicParsing="false" onAction="#ComprarClose" text="Aceptar" />
+   </children>
+</Pane>

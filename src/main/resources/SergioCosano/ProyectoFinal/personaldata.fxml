@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="451.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.PersonalDataController">
+    <children>
+        <MenuBar fx:id="menubar" layoutY="2.0" prefHeight="26.0" prefWidth="449.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Inmuebles">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchToPiso" text="Pisos" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToCasa" text="Casas" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToLocal" text="Locales" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToNave" text="Naves" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToAlmacen" text="Almacenes" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Cuenta">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Datos Personales" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToEditData" text="Editar Datos" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchToAbout" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Label layoutX="157.0" layoutY="88.0" text="Datos Personales">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+      <Label layoutX="86.0" layoutY="171.0" text="Nombre">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="nombre" layoutX="87.0" layoutY="197.0" text="Label" />
+      <Label fx:id="apellidos" layoutX="83.0" layoutY="272.0" text="Label" />
+      <Label fx:id="correo" layoutX="83.0" layoutY="348.0" text="Label" />
+      <Label fx:id="dni" layoutX="83.0" layoutY="415.0" text="Label" />
+      <PasswordField fx:id="contrasena" layoutX="83.0" layoutY="481.0" />
+      <Button layoutX="157.0" layoutY="570.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="38.0" prefWidth="136.0" style="-fx-background-color: trannsparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Volver al inicio">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button layoutX="165.0" layoutY="516.0" mnemonicParsing="false" onAction="#getUserdata" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Cargar Datos">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Label layoutX="77.0" layoutY="249.0" text="Apellidos">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="325.0" text="Correo">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="392.0" text="DNI">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="455.0" text="Contraseña">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

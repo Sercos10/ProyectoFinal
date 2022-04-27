@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="452.0" styleClass="bodybg" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.ErrorController">
+   <children>
+      <Label layoutX="197.0" layoutY="42.0" text="Error" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
+      <Label layoutX="18.0" layoutY="110.0" text="El correo o la contraseña que has introducido son erróneos" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="63.0" layoutY="153.0" text="Por favor vuelve a introducirlos correctamente" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="boton" layoutX="198.0" layoutY="202.0" mnemonicParsing="false" onAction="#ErrorClose" text="Aceptar" />
+   </children>
+</Pane>

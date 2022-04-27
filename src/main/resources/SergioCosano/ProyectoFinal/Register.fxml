@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="449.0" styleClass="bodybg" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.RegisterController">
+   <children>
+      <Label layoutX="125.0" layoutY="29.0" text="Inmuebles Cosano" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Label layoutX="168.0" layoutY="75.0" text="Register Form" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="162.0" text="Nombre" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="69.0" layoutY="220.0" text="Apellidos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="282.0" text="Correo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="343.0" text="DNI" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="contrasena" layoutX="150.0" layoutY="404.0" />
+      <TextField fx:id="dni" layoutX="151.0" layoutY="343.0" />
+      <TextField fx:id="correo" layoutX="151.0" layoutY="282.0" />
+      <TextField fx:id="apellidos" layoutX="151.0" layoutY="220.0" />
+      <TextField fx:id="nombre" layoutX="151.0" layoutY="158.0" />
+      <Button fx:id="boton" layoutX="168.0" layoutY="459.0" mnemonicParsing="false" onAction="#RegisterClose" prefHeight="43.0" prefWidth="119.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50px;" text="Registrarse" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Label layoutX="58.0" layoutY="404.0" text="Contraseña" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

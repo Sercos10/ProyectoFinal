@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="452.0" styleClass="bodybg" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.ApproveController">
+   <children>
+      <Label layoutX="148.0" layoutY="45.0" text="Felicidades" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
+      <Label layoutX="27.0" layoutY="163.0" text="Inicia Sesión para poder empezar a utilizar la aplicacion" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="122.0" text="Acabas de registarte en myProperty" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="boton" layoutX="185.0" layoutY="202.0" mnemonicParsing="false" onAction="#ApproveClose" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 50px;" text="Aceptar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+   </children>
+</Pane>
