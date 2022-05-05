@@ -29,6 +29,13 @@ public class LoginController implements Initializable {
     @FXML
     Button login;
 
+
+    /*
+    Esta funcion cambia a la pagina principal
+    @email2 Recoge el email introducido en el campo email
+    @contrasena2 Recoge la contraseña introducida en el campo contrasena
+    @select Sentencia SQL para comprobar que el email y la contraseña introducidas coinciden con un usuario de la base de datos
+     */
     @FXML
     private void switchToPrimary(ActionEvent event) throws IOException {
         String select= "SELECT * FROM cliente WHERE correo_cliente=? AND contrasena=?";
@@ -42,6 +49,7 @@ public class LoginController implements Initializable {
         if (comp!=null) {
             try {
                 if(comp.next()) {
+                    //Creo un nuevo cliente y le asignos los valores de la base de datos
                     client= new Cliente();
                     client.setId_cliente(comp.getInt("id_cliente"));
                     client.setNombre_cliente(comp.getString("nombre_cliente"));
@@ -52,19 +60,26 @@ public class LoginController implements Initializable {
                     DataService.cliente=client;
                     App.setRoot("primary");
                 }else{
+                    //en caso de que los datos introducidos sean erroneos salta una ventana emergente de error
                     new ErrorController().initError();
                 }
             } catch (Exception e) {
                 System.out.println(e);
             }
         }else{
+            //en caso de que los datos introducidos sean erroneos salta una ventana emergente de error
             new ErrorController().initError();
         }
     }
 
+    /*
+    Esta funcion hace que en caso de que el usuario no este loggeado en el sistema
+    le aparezca una ventana emergente donde introduce los datos pertinentes para logearse
+     */
     @FXML
     private void switchToRegister(ActionEvent event) throws IOException {
         try {
+            //aqui llama a la ventana emergente para poder logearse
             new RegisterController().initRegister();
         } catch (Exception e) {
             System.out.println(e);

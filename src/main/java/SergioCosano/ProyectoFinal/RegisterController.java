@@ -31,6 +31,9 @@ public class RegisterController {
     @FXML
     private PasswordField contrasena;
 
+    /*
+    Esta funcion carga la ventana emergente donde estan todos los campos a rellenar
+     */
     public void initRegister() throws IOException{
         stage= new Stage();
         FXMLLoader fxmlLoader= new FXMLLoader(App.class.getResource("Register.fxml"));
@@ -40,6 +43,9 @@ public class RegisterController {
         stage.show();
     }
 
+    /*
+    esta funcion es llamada por el boton aceptar y lo que hacer es guardar los datos introducidos por el usuario en la base de datos
+     */
     @FXML
     private void RegisterClose(){
         String select="INSERT INTO `cliente`(`nombre_cliente`, `apellidos_cliente`, `correo_cliente`, `dni_cliente`, `contrasena`) VALUES (?,?,?,?,?)";

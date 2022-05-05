@@ -53,6 +53,9 @@ public class EditClientController {
     }
 
 
+    /*
+    Esta funcion recoge los datos introducidos por el cliente y hace un UPDATE en la base de datos
+     */
     @FXML
     private void EditClose(){
         Cliente c= DataService.cliente;

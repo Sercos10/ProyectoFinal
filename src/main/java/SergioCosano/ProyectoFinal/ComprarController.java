@@ -15,6 +15,9 @@ public class ComprarController {
     @FXML
     private Button boton;
 
+    /*
+    Muestra un mensaje que muestra que la compra ha sido realizada satisfactoriamente
+     */
     public void initComprar() throws IOException{
         stage= new Stage();
         FXMLLoader fxmlLoader= new FXMLLoader(App.class.getResource("Comprar.fxml"));

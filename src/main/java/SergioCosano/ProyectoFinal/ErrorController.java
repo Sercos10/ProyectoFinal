@@ -15,6 +15,9 @@ public class ErrorController {
     @FXML
     private Button boton;
 
+    /*
+    Esta funcion muestra una ventana la muestra que la contrasena o el email introducidos son erroneos
+     */
     public void initError() throws IOException{
         stage= new Stage();
         FXMLLoader fxmlLoader= new FXMLLoader(App.class.getResource("Error.fxml"));

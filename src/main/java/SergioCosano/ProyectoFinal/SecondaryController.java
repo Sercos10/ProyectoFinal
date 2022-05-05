@@ -43,6 +43,9 @@ public class SecondaryController {
     private ImageView foto;
     private Image imagen;
 
+    /*
+    Esta funcion esta asignada a un boton donde al hacer click trae el inmueble guardado al seleccionar un inmueble en el pagination
+     */
     @FXML
     private void getUserdata(){
        inmueble= DataService.inmmueble;
@@ -77,6 +80,9 @@ public class SecondaryController {
         }
     }
 
+    /*
+    Esta funcion asigna el inmueble seleccionado al cliente logeado en la aplicacion
+     */
     @FXML
     private void Comprar(){
         Cliente client= DataService.cliente;

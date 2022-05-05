@@ -18,8 +18,6 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class PersonalDataController implements Initializable {
@@ -40,6 +38,10 @@ public class PersonalDataController implements Initializable {
     private Label dni;
     @FXML
     private PasswordField contrasena;
+
+    /*
+    Esta funcion carga los datos del usuario
+     */
     @FXML
     private void getUserdata() throws IOException{
        comparar= DataService.cliente;
@@ -190,6 +192,9 @@ public class PersonalDataController implements Initializable {
         }
     }
 
+    /*
+    Esta funcion abre una ventana emergente donde puedes cambiar tus datos
+     */
     @FXML
     private void switchToEditData(ActionEvent event) throws IOException {
         try {

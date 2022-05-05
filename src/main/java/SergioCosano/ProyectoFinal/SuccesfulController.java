@@ -15,6 +15,9 @@ public class SuccesfulController {
     @FXML
     private Button boton;
 
+    /*
+    Esta funcion muestra una ventana emergente cuando el usuario a cambiado sus datos correctamente
+     */
     public void initSuccesful() throws IOException{
         stage= new Stage();
         FXMLLoader fxmlLoader= new FXMLLoader(App.class.getResource("Succesful.fxml"));

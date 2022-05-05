@@ -15,6 +15,9 @@ public class AboutController {
     @FXML
     private Button boton;
 
+    /*
+    Muestra la version de la aplicacion y del autor que la ha desarrollado
+     */
     public void initAbout() throws IOException{
         stage= new Stage();
         FXMLLoader fxmlLoader= new FXMLLoader(App.class.getResource("About.fxml"));

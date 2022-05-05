@@ -45,6 +45,10 @@ public class InmuebleController {
     private ImageView foto;
     private Image imagen;
 
+
+    /*
+    Este controlador es el mismo que el Secundary controller
+     */
     @FXML
     private void getUserdata(){
        inmueble= DataService.inmmueble;

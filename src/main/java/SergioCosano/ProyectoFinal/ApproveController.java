@@ -15,6 +15,9 @@ public class ApproveController {
     @FXML
     private Button boton;
 
+    /*
+    Muestra un mensaje donde muestra que te has registrado satisfactoriamente en la aplicacion
+     */
     public void initApprove() throws IOException{
         stage= new Stage();
         FXMLLoader fxmlLoader= new FXMLLoader(App.class.getResource("Approve.fxml"));

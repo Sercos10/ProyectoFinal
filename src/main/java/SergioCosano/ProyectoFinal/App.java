@@ -17,6 +17,7 @@ public class App extends Application {
 
     private static Scene scene;
 
+    //iniciamos la aplicacion y hacemos la conexcion con la base de datos
     @Override
     public void start(Stage stage) throws IOException {
         Connection conectado= SQL.getConnection("src/main/resources/SergioCosano/Xmls/sql.xml");
