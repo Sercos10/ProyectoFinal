@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegisterController {
     private Stage stage;
@@ -50,19 +52,36 @@ public class RegisterController {
     private void RegisterClose(){
         String select="INSERT INTO `cliente`(`nombre_cliente`, `apellidos_cliente`, `correo_cliente`, `dni_cliente`, `contrasena`) VALUES (?,?,?,?,?)";
         Connection cn = SQL.getConnection("src/main/resources/SergioCosano/Xmls/sql.xml");
-        try {
-            PreparedStatement pt= cn.prepareStatement(select);
-            pt.setString(1,nombre.getText());
-            pt.setString(2,apellidos.getText());
-            pt.setString(3,correo.getText());
-            pt.setString(4,dni.getText());
-            pt.setString(5,contrasena.getText());
-            pt.executeUpdate();
-            new ApproveController().initApprove();
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
+        //Expresion regular para validar un email
+        Pattern pat= Pattern.compile("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$");
+        Matcher mat= pat.matcher(correo.getText());
+        //La contraseña debe tener minimo 8 caracteres, una misnuscula, una mayuscula, un digito y un caracter especial.
+        Pattern pat2= Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
+        Matcher mat2= pat2.matcher(contrasena.getText());
+        Pattern pat3= Pattern.compile("^[0-9]{7,8}[A-Z]");
+        Matcher mat3= pat3.matcher(dni.getText());
+        if ((mat.matches()&&mat2.matches())&&mat3.matches()){
+            try {
+                PreparedStatement pt= cn.prepareStatement(select);
+                pt.setString(1,nombre.getText());
+                pt.setString(2,apellidos.getText());
+                pt.setString(3,correo.getText());
+                pt.setString(4,dni.getText());
+                pt.setString(5,contrasena.getText());
+                pt.executeUpdate();
+                new ApproveController().initApprove();
+            } catch (SQLException | IOException e) {
+                e.printStackTrace();
+            }
+            stage= (Stage) this.boton.getScene().getWindow();
+            stage.close();
+        }else{
+            try {
+                new ErrorController().initError();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        stage= (Stage) this.boton.getScene().getWindow();
-        stage.close();
+
     }
 }

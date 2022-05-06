@@ -17,6 +17,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LoginController implements Initializable {
     private Cliente client;
@@ -41,35 +43,47 @@ public class LoginController implements Initializable {
         String select= "SELECT * FROM cliente WHERE correo_cliente=? AND contrasena=?";
         List<Object> rq= new ArrayList<>();
         String email2= email.getText();
+        //Expresion regular para validar un email
+        Pattern pat= Pattern.compile("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$");
+        Matcher mat= pat.matcher(email2);
         String contrasena2= contrasena.getText();
-        rq.add(email2);
-        rq.add(contrasena2);
+        //La contraseña debe tener minimo 8 caracteres, una misnuscula, una mayuscula, un digito y un caracter especial.
+        Pattern pat2= Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
+        Matcher mat2= pat2.matcher(contrasena2);
+        if (mat.matches()&&mat2.matches()){
+            rq.add(email2);
+            rq.add(contrasena2);
 
-        ResultSet comp= SQL.execQuery(select,rq);
-        if (comp!=null) {
-            try {
-                if(comp.next()) {
-                    //Creo un nuevo cliente y le asignos los valores de la base de datos
-                    client= new Cliente();
-                    client.setId_cliente(comp.getInt("id_cliente"));
-                    client.setNombre_cliente(comp.getString("nombre_cliente"));
-                    client.setApellidos_cliente(comp.getString("apellidos_cliente"));
-                    client.setCorreo_cliente(comp.getString("correo_cliente"));
-                    client.setDni_cliente(comp.getString("dni_cliente"));
-                    client.setContrasena(comp.getString("contrasena"));
-                    DataService.cliente=client;
-                    App.setRoot("primary");
-                }else{
-                    //en caso de que los datos introducidos sean erroneos salta una ventana emergente de error
-                    new ErrorController().initError();
+            ResultSet comp= SQL.execQuery(select,rq);
+            if (comp!=null) {
+                try {
+                    if(comp.next()) {
+                        //Creo un nuevo cliente y le asignos los valores de la base de datos
+                        client= new Cliente();
+                        client.setId_cliente(comp.getInt("id_cliente"));
+                        client.setNombre_cliente(comp.getString("nombre_cliente"));
+                        client.setApellidos_cliente(comp.getString("apellidos_cliente"));
+                        client.setCorreo_cliente(comp.getString("correo_cliente"));
+                        client.setDni_cliente(comp.getString("dni_cliente"));
+                        client.setContrasena(comp.getString("contrasena"));
+                        DataService.cliente=client;
+                        App.setRoot("primary");
+                    }else{
+                        //en caso de que los datos introducidos sean erroneos salta una ventana emergente de error
+                        new ErrorController().initError();
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
                 }
-            } catch (Exception e) {
-                System.out.println(e);
+            }else{
+                //en caso de que los datos introducidos sean erroneos salta una ventana emergente de error
+                new ErrorController().initError();
             }
         }else{
             //en caso de que los datos introducidos sean erroneos salta una ventana emergente de error
             new ErrorController().initError();
         }
+
     }
 
     /*
