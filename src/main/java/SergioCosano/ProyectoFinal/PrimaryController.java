@@ -117,6 +117,7 @@ public class PrimaryController implements Initializable {
                     inmbueble.setPrecio_inmueble(comp.getFloat("precio_inmueble"));
                     inmbueble.setFech_dispo(comp.getDate("fech_dispo"));
                     inmbueble.setTipo_inmueble(comp.getString("tipo_inmueble"));
+                    inmbueble.setCRU(comp.getDouble("CRU"));
                     inmbueble.setIndice(comp.getInt("indice"));
                     DataService.inmmueble=inmbueble;
 
@@ -143,6 +144,7 @@ public class PrimaryController implements Initializable {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -167,6 +169,7 @@ public class PrimaryController implements Initializable {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -191,6 +194,7 @@ public class PrimaryController implements Initializable {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -215,6 +219,7 @@ public class PrimaryController implements Initializable {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -239,6 +244,7 @@ public class PrimaryController implements Initializable {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");

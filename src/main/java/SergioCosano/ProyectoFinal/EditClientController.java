@@ -3,6 +3,7 @@ package SergioCosano.ProyectoFinal;
 import SergioCosano.ProyectoFinal.Model.Cliente;
 import SergioCosano.ProyectoFinal.Utils.DataService;
 import SergioCosano.ProyectoFinal.Utils.SQL;
+import SergioCosano.ProyectoFinal.Utils.Utils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,6 +21,7 @@ import java.sql.SQLException;
 public class EditClientController {
     private Stage stage;
     private Scene scene;
+    private String encrypt;
     @FXML
     private Button boton;
     @FXML
@@ -49,7 +51,6 @@ public class EditClientController {
         apellidos.setText(c.getApellidos_cliente());
         correo.setText(c.getCorreo_cliente());
         dni.setText(c.getDni_cliente());
-        contrasena.setText(c.getContrasena());
     }
 
 
@@ -62,13 +63,14 @@ public class EditClientController {
         String s=""+c.getId_cliente();
         String select= "UPDATE `cliente` SET `nombre_cliente`=?, `apellidos_cliente`=?, `correo_cliente`=?, `dni_cliente`=?, `contrasena`=? WHERE `cliente`.`id_cliente` ="+s;
         Connection cn = SQL.getConnection("src/main/resources/SergioCosano/Xmls/sql.xml");
+        encrypt= Utils.encryptSHA256(contrasena.getText());
         try {
             PreparedStatement pt= cn.prepareStatement(select);
             pt.setString(1,nombre.getText());
             pt.setString(2,apellidos.getText());
             pt.setString(3,correo.getText());
             pt.setString(4,dni.getText());
-            pt.setString(5,contrasena.getText());
+            pt.setString(5,encrypt);
             pt.executeUpdate();
             new SuccesfulController().initSuccesful();
         } catch (SQLException | IOException e) {

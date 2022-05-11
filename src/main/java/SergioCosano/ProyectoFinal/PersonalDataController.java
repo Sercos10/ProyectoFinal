@@ -36,8 +36,6 @@ public class PersonalDataController implements Initializable {
     private Label correo;
     @FXML
     private Label dni;
-    @FXML
-    private PasswordField contrasena;
 
     /*
     Esta funcion carga los datos del usuario
@@ -45,12 +43,11 @@ public class PersonalDataController implements Initializable {
     @FXML
     private void getUserdata() throws IOException{
        comparar= DataService.cliente;
-        if (comparar.getClass()==Cliente.class){
+        if (comparar.getClass()==Cliente.class&&comparar!=null){
             nombre.setText(comparar.getNombre_cliente());
             apellidos.setText(comparar.getApellidos_cliente());
             correo.setText(comparar.getCorreo_cliente());
             dni.setText(comparar.getDni_cliente());
-            contrasena.setText(comparar.getContrasena());
         }else{
             App.setRoot("Login");
         }

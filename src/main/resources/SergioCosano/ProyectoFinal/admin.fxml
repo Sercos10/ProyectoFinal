@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="449.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.AdminController">
+    <children>
+        <MenuBar fx:id="menubar" layoutY="2.0" prefHeight="26.0" prefWidth="449.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Inmuebles">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchToPiso" text="Pisos" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToCasa" text="Casas" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToLocal" text="Locales" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToNave" text="Naves" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToAlmacen" text="Almacenes" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Cuenta">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Datos Personales" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToEditData" text="Editar Datos" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchToAbout" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Label layoutX="182.0" layoutY="83.0" text="Inmuebles">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+      <Button fx:id="edit" layoutX="170.0" layoutY="484.0" mnemonicParsing="false" onAction="#switchToEditInmu" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Editar Inmueble">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="delete" layoutX="163.0" layoutY="562.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Eliminar Inmueble">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="add" layoutX="168.0" layoutY="522.0" mnemonicParsing="false" onAction="#switchToAddInmu" style="-fx-background-color: trnasparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Añadir Inmueble">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TableView fx:id="tblinmueble" layoutX="31.0" layoutY="127.0" prefHeight="323.0" prefWidth="385.0">
+        <columns>
+          <TableColumn fx:id="CRU" prefWidth="138.79999351501465" text="CRU" />
+          <TableColumn fx:id="tipo" prefWidth="110.79998779296875" text="TIPO" />
+            <TableColumn fx:id="precio" prefWidth="138.0" text="PRECIO" />
+        </columns>
+      </TableView>
+    </children>
+</Pane>

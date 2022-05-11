@@ -1,6 +1,7 @@
 package SergioCosano.ProyectoFinal;
 
 import SergioCosano.ProyectoFinal.Utils.SQL;
+import SergioCosano.ProyectoFinal.Utils.Utils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,6 +21,7 @@ import java.util.regex.Pattern;
 public class RegisterController {
     private Stage stage;
     private Scene scene;
+    private String encrypt;
     @FXML
     private Button boton;
     @FXML
@@ -58,6 +60,7 @@ public class RegisterController {
         //La contraseña debe tener minimo 8 caracteres, una misnuscula, una mayuscula, un digito y un caracter especial.
         Pattern pat2= Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
         Matcher mat2= pat2.matcher(contrasena.getText());
+        encrypt= Utils.encryptSHA256(contrasena.getText());
         Pattern pat3= Pattern.compile("^[0-9]{7,8}[A-Z]");
         Matcher mat3= pat3.matcher(dni.getText());
         if ((mat.matches()&&mat2.matches())&&mat3.matches()){
@@ -67,7 +70,7 @@ public class RegisterController {
                 pt.setString(2,apellidos.getText());
                 pt.setString(3,correo.getText());
                 pt.setString(4,dni.getText());
-                pt.setString(5,contrasena.getText());
+                pt.setString(5,encrypt);
                 pt.executeUpdate();
                 new ApproveController().initApprove();
             } catch (SQLException | IOException e) {

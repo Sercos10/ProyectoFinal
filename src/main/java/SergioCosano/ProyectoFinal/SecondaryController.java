@@ -53,7 +53,7 @@ public class SecondaryController {
         tipo2.setText(inmueble.getTipo_inmueble());
         desc.setText(inmueble.getDesc_inmueble());
         ubic.setText(inmueble.getUbic_inmueble());
-        String precio= ""+inmueble.getPrecio_inmueble();
+        String precio= ""+inmueble.getPrecio_inmueble()+"€";
         prec.setText(precio);
         String fecha= ""+inmueble.getFech_dispo();
         fech.setText(fecha);
@@ -113,6 +113,7 @@ public class SecondaryController {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -137,6 +138,7 @@ public class SecondaryController {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -161,6 +163,7 @@ public class SecondaryController {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -185,6 +188,7 @@ public class SecondaryController {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");
@@ -209,6 +213,7 @@ public class SecondaryController {
                 inmueble.setPrecio_inmueble(st.getFloat("precio_inmueble"));
                 inmueble.setFech_dispo(st.getDate("fech_dispo"));
                 inmueble.setTipo_inmueble(st.getString("tipo_inmueble"));
+                inmueble.setCRU(st.getDouble("CRU"));
                 inmueble.setIndice(st.getInt("indice"));
                 DataService.inmmueble=inmueble;
                 App.setRoot("Inmuebles");

@@ -3,6 +3,7 @@ package SergioCosano.ProyectoFinal;
 import SergioCosano.ProyectoFinal.Model.Cliente;
 import SergioCosano.ProyectoFinal.Utils.DataService;
 import SergioCosano.ProyectoFinal.Utils.SQL;
+import SergioCosano.ProyectoFinal.Utils.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,6 +23,7 @@ import java.util.regex.Pattern;
 
 public class LoginController implements Initializable {
     private Cliente client;
+    private String encrypt;
     @FXML
     javafx.scene.control.TextField email;
     @FXML
@@ -47,12 +49,13 @@ public class LoginController implements Initializable {
         Pattern pat= Pattern.compile("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$");
         Matcher mat= pat.matcher(email2);
         String contrasena2= contrasena.getText();
+        encrypt=Utils.encryptSHA256(contrasena2);
         //La contraseña debe tener minimo 8 caracteres, una misnuscula, una mayuscula, un digito y un caracter especial.
         Pattern pat2= Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
         Matcher mat2= pat2.matcher(contrasena2);
         if (mat.matches()&&mat2.matches()){
             rq.add(email2);
-            rq.add(contrasena2);
+            rq.add(encrypt);
 
             ResultSet comp= SQL.execQuery(select,rq);
             if (comp!=null) {
@@ -67,7 +70,11 @@ public class LoginController implements Initializable {
                         client.setDni_cliente(comp.getString("dni_cliente"));
                         client.setContrasena(comp.getString("contrasena"));
                         DataService.cliente=client;
-                        App.setRoot("primary");
+                        if (client.getId_cliente() != 7) {
+                            App.setRoot("primary");
+                        }else{
+                            App.setRoot("admin");
+                        }
                     }else{
                         //en caso de que los datos introducidos sean erroneos salta una ventana emergente de error
                         new ErrorController().initError();

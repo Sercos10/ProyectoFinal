@@ -9,19 +9,21 @@ public class Inmueble {
     private float precio_inmueble;
     private Date fech_dispo;
     private String tipo_inmueble;
+    private Double CRU;
     private int id_cliente;
     private int indice;
 
     public Inmueble() {
     }
 
-    public Inmueble(int id_inmueble, String desc_inmueble, String ubic_inmueble, float precio_inmueble, Date fech_dispo, String tipo_inmueble, int id_cliente, int indice) {
+    public Inmueble(int id_inmueble, String desc_inmueble, String ubic_inmueble, float precio_inmueble, Date fech_dispo, String tipo_inmueble, Double CRU, int id_cliente, int indice) {
         this.id_inmueble = id_inmueble;
         this.desc_inmueble = desc_inmueble;
         this.ubic_inmueble = ubic_inmueble;
         this.precio_inmueble = precio_inmueble;
         this.fech_dispo = fech_dispo;
         this.tipo_inmueble = tipo_inmueble;
+        this.CRU=CRU;
         this.id_cliente = id_cliente;
         this.indice = indice;
     }
@@ -72,6 +74,14 @@ public class Inmueble {
 
     public void setTipo_inmueble(String tipo_inmueble) {
         this.tipo_inmueble = tipo_inmueble;
+    }
+
+    public Double getCRU() {
+        return CRU;
+    }
+
+    public void setCRU(Double CRU) {
+        this.CRU = CRU;
     }
 
     public int getId_cliente() {
