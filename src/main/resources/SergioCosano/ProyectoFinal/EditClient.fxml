@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="449.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.EditClientController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="449.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.Controllers.EditClientController">
    <children>
       <Label layoutX="125.0" layoutY="29.0" text="Inmuebles Cosano">
          <font>
@@ -34,24 +34,24 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="contrasena" layoutX="168.0" layoutY="379.0" />
-      <TextField fx:id="dni" layoutX="151.0" layoutY="318.0" />
-      <TextField fx:id="correo" layoutX="151.0" layoutY="257.0" />
-      <TextField fx:id="apellidos" layoutX="151.0" layoutY="195.0" />
-      <TextField fx:id="nombre" layoutX="151.0" layoutY="137.0" />
-      <Button fx:id="boton" layoutX="134.0" layoutY="491.0" mnemonicParsing="false" onAction="#EditClose" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Confirmar Cambios">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></Button>
       <Label layoutX="15.0" layoutY="379.0" text="Nueva Contraseña">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
+      <TextField fx:id="nombre" layoutX="151.0" layoutY="137.0" />
+      <TextField fx:id="apellidos" layoutX="151.0" layoutY="195.0" />
+      <TextField fx:id="correo" layoutX="151.0" layoutY="257.0" />
+      <TextField fx:id="dni" layoutX="151.0" layoutY="318.0" />
+      <PasswordField fx:id="contrasena" layoutX="168.0" layoutY="379.0" />
       <Button fx:id="boton1" layoutX="136.0" layoutY="426.0" mnemonicParsing="false" onAction="#getUserdata" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Cargar Datos">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <Button fx:id="boton" layoutX="134.0" layoutY="491.0" mnemonicParsing="false" onAction="#EditClose" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Confirmar Cambios">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
    </children>
 </Pane>

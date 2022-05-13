@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="449.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.addInmuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="449.0" styleClass="bodybg" stylesheets="@../css/mainpage.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SergioCosano.ProyectoFinal.Controllers.addInmuController">
    <children>
       <Label layoutX="125.0" layoutY="29.0" text="Inmuebles Cosano">
          <font>
@@ -34,19 +34,19 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tipo" layoutX="151.0" layoutY="343.0" />
-      <TextField fx:id="precio" layoutX="151.0" layoutY="282.0" />
-      <TextField fx:id="ubic" layoutX="151.0" layoutY="220.0" prefHeight="25.0" prefWidth="265.0" />
-      <TextField fx:id="descrip" layoutX="151.0" layoutY="158.0" prefHeight="49.0" prefWidth="265.0" />
-      <Button fx:id="boton" layoutX="140.0" layoutY="459.0" mnemonicParsing="false" onAction="#InmmuClose" prefHeight="43.0" prefWidth="169.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Añadir Inmueble">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></Button>
       <Label layoutX="58.0" layoutY="404.0" text="CRU">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
+      <TextField fx:id="descrip" layoutX="151.0" layoutY="158.0" prefHeight="49.0" prefWidth="265.0" />
+      <TextField fx:id="ubic" layoutX="151.0" layoutY="220.0" prefHeight="25.0" prefWidth="265.0" />
+      <TextField fx:id="precio" layoutX="151.0" layoutY="282.0" />
+      <TextField fx:id="tipo" layoutX="151.0" layoutY="343.0" />
       <TextField fx:id="CRU" layoutX="150.0" layoutY="404.0" />
+      <Button fx:id="boton" layoutX="140.0" layoutY="459.0" mnemonicParsing="false" onAction="#InmmuClose" prefHeight="43.0" prefWidth="169.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-radius: 50px;" text="Añadir Inmueble">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
    </children>
 </Pane>
