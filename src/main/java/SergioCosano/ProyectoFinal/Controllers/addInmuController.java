@@ -11,9 +11,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class addInmuController {
@@ -50,19 +53,19 @@ public class addInmuController {
      */
     @FXML
     private void InmmuClose(){
-        LocalDateTime created= LocalDateTime.now();
-
-        String select="INSERT INTO `inmueble`(`desc_inmueble`, `ubic_inmueble`, `precio_inmueble`,`fech_dispo`, `tipo_inmueble`, `CRU`,`id_cliente`) VALUES (?,?,?,?,?,?,?)";
+        LocalDate created= LocalDate.now();
+        java.sql.Date sqlDate= java.sql.Date.valueOf(created);
+        String select="INSERT INTO `inmueble` (`id_inmueble`, `desc_inmueble`, `ubic_inmueble`, `precio_inmueble`, `fech_dispo`, `tipo_inmueble`, `CRU`, `id_cliente`, `indice`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, 0)";
         Connection cn = SQL.getConnection("src/main/resources/SergioCosano/Xmls/sql.xml");
             try {
                 PreparedStatement pt= cn.prepareStatement(select);
                 pt.setString(1,descrip.getText());
                 pt.setString(2,ubic.getText());
-                pt.setString(3,precio.getText());
-                pt.setString(4, created.toString());
+                pt.setDouble(3, Double.parseDouble(precio.getText()));
+                pt.setDate(4, sqlDate);
                 pt.setString(5,tipo.getText());
-                pt.setString(6,CRU.getText());
-                pt.setString(7,"7");
+                pt.setDouble(6, Double.parseDouble(CRU.getText()));
+                pt.setInt(7,7);
                 pt.executeUpdate();
                 new ApproveController().initApprove();
             } catch (SQLException | IOException e) {

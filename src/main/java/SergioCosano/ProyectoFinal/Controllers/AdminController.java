@@ -27,8 +27,8 @@ import java.util.List;
 public class AdminController{
 
     private InmuebleDAO iDAO = new InmuebleDAO();
-    private List<Inmueble> inmuebles= (List<Inmueble>) iDAO.getAll();
-    private final ObservableList<Inmueble>listaInmuebles= FXCollections.observableArrayList(inmuebles);
+    List<Inmueble> inmuebles= (List<Inmueble>) iDAO.getAll();
+    ObservableList<Inmueble>listaInmuebles= FXCollections.observableArrayList(inmuebles);
     @FXML
     private MenuBar menubar;
     @FXML
@@ -49,9 +49,11 @@ public class AdminController{
 
     @FXML
     public void initialize() {
+        List<Inmueble> inmuebles= (List<Inmueble>) iDAO.getAll();
+        ObservableList<Inmueble>listaInmuebles= FXCollections.observableArrayList(inmuebles);
         this.configuraTabla();
-        tblinmueble.setItems(FXCollections.observableArrayList(inmuebles));
-
+        tblinmueble.setItems(FXCollections.observableArrayList(listaInmuebles));
+        tblinmueble.refresh();
     }
     @FXML
     private void configuraTabla() {
@@ -73,39 +75,44 @@ public class AdminController{
     }
 
     @FXML
-    private void delInmu(ActionEvent event){
+    private void Refresh(){
+        initialize();
+    }
+    @FXML
+    private void delInmu(){
         if (tblinmueble.getSelectionModel().getSelectedItem()!=null) {
             Inmueble selected = tblinmueble.getSelectionModel().getSelectedItem();
             iDAO.delete(selected);
+            initialize();
         }
     }
 
     @FXML
-    private void switchToEditInmu(ActionEvent event) throws IOException {
+    private void switchToEditInmu() {
         try {
             if (tblinmueble.getSelectionModel().getSelectedItem()!=null){
                 Inmueble selected= tblinmueble.getSelectionModel().getSelectedItem();
                 DataService.inmmueble=selected;
                 new EditInmuebleController().initEdit();
+                initialize();
             }
         } catch (Exception e) {
             System.out.println(e);
         }
-        this.initialize();
     }
 
     @FXML
-    private void switchToAddInmu(ActionEvent event) throws IOException {
+    private void switchToAddInmu() {
         try {
             new addInmuController().initAddInmu();
-            initialize();
         } catch (Exception e) {
             System.out.println(e);
         }
+        initialize();
     }
 
     @FXML
-    private void switchToEditData(ActionEvent event) throws IOException {
+    private void switchToEditData() {
         try {
             new EditClientController().initEdit();
         } catch (Exception e) {

@@ -64,9 +64,12 @@ public class InmuebleDAO {
     }
 
     public void delete(Inmueble i){
-        String DELETE= "DELETE * FROM `inmueble` WHERE `inmueble`.`CRU`="+i.getCRU()+"";
+        Double hola= i.getCRU();
+        String DELETE= "DELETE FROM inmueble WHERE CRU=?";
         try {
             PreparedStatement pt= cn.prepareStatement(DELETE);
+            pt.setDouble(1,hola);
+            pt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
